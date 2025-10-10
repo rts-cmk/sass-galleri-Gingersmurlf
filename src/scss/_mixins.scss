@@ -1,0 +1,8 @@
+$phone: 640px;
+$laptop: 2564px;
+
+@mixin screenSize($size: $phone) {
+  @media only screen and (max-width: $size) {
+    @content;
+  }
+}

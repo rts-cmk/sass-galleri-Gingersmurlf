@@ -1,0 +1,68 @@
+@use "header";
+@use "mixins";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.root {
+  padding: 1.5rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.grid {
+  column-count: 5;
+  padding: 1rem;
+  img {
+    width: 100%;
+    margin: 0 0 1rem;
+  }
+  @include mixins.screenSize(mixins.$phone) {
+    column-count: 1;
+  }
+}
+
+.main__nav {
+  margin-left: 15rem;
+  margin-bottom: 1rem;
+  ul {
+    list-style: none;
+    display: flex;
+    gap: 10px;
+  }
+  a {
+    text-decoration: none;
+    color: grey;
+  }
+  select {
+    color: grey;
+    border: none;
+    outline: none;
+  }
+  h1 {
+    margin-bottom: 10px;
+    color: rgb(24, 24, 24);
+  }
+  
+  @include mixins.screenSize(mixins.$phone) {
+    margin-left: 10px;
+  }
+}
+
+.main__selectPhone {
+    @include mixins.screenSize(mixins.$laptop) {
+      display: none;
+    }
+    @include mixins.screenSize(mixins.$phone) {
+      display: block;
+    }
+  }
+.main__nav {
+  ul {
+    @include mixins.screenSize(mixins.$phone) {
+      display: none;
+    }
+  }
+}
